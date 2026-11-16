@@ -121,7 +121,7 @@
     setTimeout(() => f.name.focus({ preventScroll: true }), 700);
   });
 
-  // Reservation form -> opens an email draft (no backend needed on static hosting)
+  // Reservation form -> opens WhatsApp with the request prefilled (no backend needed)
   const form = $('#bookForm'), note = $('#formNote');
   form.addEventListener('submit', e => {
     e.preventDefault();
@@ -132,13 +132,14 @@
       return !ok;
     });
     if (bad.length) { note.textContent = 'Please share your name and a valid email.'; return; }
-    const body = [
+    const lines = [
+      'Hello Dialine Luxury Spa, I would like to request a reservation.',
       `Name: ${d.get('name')}`, `Email: ${d.get('email')}`,
-      `Treatment: ${d.get('treatment')}`, `Preferred date: ${d.get('date') || 'Flexible'}`,
-      '', d.get('notes') || ''
-    ].join('\n');
-    location.href = `mailto:hello@dialineluxuryspa.in?subject=${encodeURIComponent('Reservation request — ' + d.get('treatment'))}&body=${encodeURIComponent(body)}`;
-    note.textContent = 'Thank you — your email draft is ready to send. We look forward to welcoming you.';
+      `Treatment: ${d.get('treatment')}`, `Preferred date: ${d.get('date') || 'Flexible'}`
+    ];
+    if (d.get('notes').trim()) lines.push(`Notes: ${d.get('notes').trim()}`);
+    window.open('https://wa.me/916303246142?text=' + encodeURIComponent(lines.join('\n')), '_blank', 'noopener');
+    note.textContent = 'Opening WhatsApp with your request — just press send. We look forward to welcoming you.';
     form.reset();
   });
   $$('input', form).forEach(i => i.addEventListener('input', () => i.classList.remove('is-invalid')));
