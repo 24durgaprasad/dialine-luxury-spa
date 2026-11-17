@@ -110,7 +110,8 @@ const buildPage = (s) => {
           '@type': 'DaySpa',
           name: site.name,
           telephone: site.phone,
-          url: site.baseUrl
+          url: site.baseUrl,
+          logo: `${site.baseUrl}/assets/logo.webp`
         },
         areaServed: { '@type': 'City', name: 'Visakhapatnam' }
       },
@@ -187,6 +188,7 @@ const ldjsonBlock = (() => {
     '@context': 'https://schema.org',
     '@type': 'DaySpa',
     name: site.name,
+    logo: `${site.baseUrl}/assets/logo.webp`,
     description:
       'A luxury day spa in Visakhapatnam offering traditional, deep tissue, bath and signature massage rituals.',
     image:
