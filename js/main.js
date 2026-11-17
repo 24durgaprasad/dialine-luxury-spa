@@ -130,17 +130,10 @@
     setTimeout(() => f.name.focus({ preventScroll: true }), 700);
   });
 
-  // CRM Configuration for Dialine Spa
-  const CRM_CONFIG = {
-    tenantId: 'dialine_spa',
-    tenantName: 'Dialine Spa',
-    email: 'dialinespa@vivtej.com',
-    endpoint: 'https://api.crm.vivtejsoftwaresolutions.com/api/internal-leads',
-    leadsEndpoint: 'https://api.crm.vivtejsoftwaresolutions.com/api/leads',
-    token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhZmMwOTY2ODBjMmQyN2EwYjYzZmJjYSIsInNpZCI6ImJlN2QyZmRmNzU1NmU3ZGVhZWU2MGJkZTEzMzEzNWE4ZjlkODJmYzNkZGIzNTdiYzI2MzQwZWQxZjJlMDJlMGYiLCJ0ZW5hbnRJZCI6ImRpYWxpbmVfc3BhIiwiaWF0IjoxNzk0OTA3MjcwLCJleHAiOjQ5NTA2NjcyNzB9.SYclJvd6MRVGNez9wFmb8ltiWVcMnYYk_M0nS6CoV0I'
-  };
+  // CRM Endpoint for Enquiries
+  const CRM_ENQUIRIES_ENDPOINT = 'https://api.crm.vivtejsoftwaresolutions.com/api/internal-leads';
 
-  // Reservation form -> posts lead and booking data to Vivtej CRM API
+  // Reservation form -> posts enquiry directly to Vivtej CRM
   const form = $('#bookForm'), note = $('#formNote');
   if (form && note) {
     form.addEventListener('submit', async e => {
@@ -181,7 +174,7 @@
         return;
       }
 
-      // Payload for Vivtej CRM
+      // Payload for Vivtej CRM Enquiries
       const payload = {
         name,
         phone,
@@ -191,36 +184,20 @@
         date,
         time,
         message,
-        tenant_id: CRM_CONFIG.tenantId,
-        tenant: CRM_CONFIG.tenantId,
-        tenantId: CRM_CONFIG.tenantId,
+        tenant_id: 'dialine_spa',
+        tenant: 'dialine_spa',
+        tenantId: 'dialine_spa',
         attributes: {
           therapy: ritual,
           date,
           time,
           message,
-          tenant_id: CRM_CONFIG.tenantId,
-          tenant: CRM_CONFIG.tenantId
+          tenant_id: 'dialine_spa',
+          tenant: 'dialine_spa'
         },
         source: 'Dialine Luxury Spa Website - Booking Form',
         source_url: window.location.href,
         timestamp: new Date().toISOString()
-      };
-
-      const directLeadPayload = {
-        name,
-        phone,
-        email: email || '',
-        service: ritual,
-        lead_source: 'Website Booking Form',
-        status: 'New',
-        attributes: {
-          therapy: ritual,
-          date,
-          time,
-          message,
-          tenant_id: CRM_CONFIG.tenantId
-        }
       };
 
       const originalBtnText = submitBtn ? submitBtn.textContent : '';
@@ -232,27 +209,18 @@
       note.style.color = 'var(--gold-2)';
 
       try {
-        // Send to internal-leads endpoint
-        const internalPromise = fetch(CRM_CONFIG.endpoint, {
+        const res = await fetch(CRM_ENQUIRIES_ENDPOINT, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
-            'X-Tenant-Id': CRM_CONFIG.tenantId
+            'X-Tenant-Id': 'dialine_spa'
           },
           body: JSON.stringify(payload)
-        }).catch(err => console.warn('internal-leads warning:', err));
+        });
 
-        // Send to tenant leads endpoint with dialine_spa authorization
-        const directPromise = fetch(CRM_CONFIG.leadsEndpoint, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${CRM_CONFIG.token}`
-          },
-          body: JSON.stringify(directLeadPayload)
-        }).catch(err => console.warn('direct lead warning:', err));
-
-        await Promise.all([internalPromise, directPromise]);
+        if (!res.ok) {
+          throw new Error('Server returned ' + res.status);
+        }
 
         const safeName = name.replace(/[&<>'"]/g, t => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[t]||t));
         note.style.color = 'var(--gold-2)';
@@ -266,7 +234,7 @@
         note.appendChild(waWrap);
 
       } catch (err) {
-        console.error('Lead submission failed:', err);
+        console.error('Enquiry submission failed:', err);
         note.style.color = 'var(--gold-2)';
         const waText = encodeURIComponent(`Hello Dialine Luxury Spa, I would like to book ${ritual} on ${date}.\nName: ${name}\nPhone: ${phone}`);
         note.innerHTML = `Your reservation details are ready. <a href="https://wa.me/916303246142?text=${waText}" target="_blank" rel="noopener" style="color:var(--gold);text-decoration:underline;">Click here to confirm directly on WhatsApp &rarr;</a>`;
