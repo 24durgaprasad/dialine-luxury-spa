@@ -130,6 +130,16 @@
     setTimeout(() => f.name.focus({ preventScroll: true }), 700);
   });
 
+  // CRM Configuration for Dialine Spa
+  const CRM_CONFIG = {
+    tenantId: 'dialine_spa',
+    tenantName: 'Dialine Spa',
+    email: 'dialinespa@vivtej.com',
+    endpoint: 'https://api.crm.vivtejsoftwaresolutions.com/api/internal-leads',
+    leadsEndpoint: 'https://api.crm.vivtejsoftwaresolutions.com/api/leads',
+    token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhZmMwOTY2ODBjMmQyN2EwYjYzZmJjYSIsInNpZCI6ImJlN2QyZmRmNzU1NmU3ZGVhZWU2MGJkZTEzMzEzNWE4ZjlkODJmYzNkZGIzNTdiYzI2MzQwZWQxZjJlMDJlMGYiLCJ0ZW5hbnRJZCI6ImRpYWxpbmVfc3BhIiwiaWF0IjoxNzk0OTA3MjcwLCJleHAiOjQ5NTA2NjcyNzB9.SYclJvd6MRVGNez9wFmb8ltiWVcMnYYk_M0nS6CoV0I'
+  };
+
   // Reservation form -> posts lead and booking data to Vivtej CRM API
   const form = $('#bookForm'), note = $('#formNote');
   if (form && note) {
@@ -171,6 +181,7 @@
         return;
       }
 
+      // Payload for Vivtej CRM
       const payload = {
         name,
         phone,
@@ -180,15 +191,36 @@
         date,
         time,
         message,
+        tenant_id: CRM_CONFIG.tenantId,
+        tenant: CRM_CONFIG.tenantId,
+        tenantId: CRM_CONFIG.tenantId,
         attributes: {
           therapy: ritual,
           date,
           time,
-          message
+          message,
+          tenant_id: CRM_CONFIG.tenantId,
+          tenant: CRM_CONFIG.tenantId
         },
         source: 'Dialine Luxury Spa Website - Booking Form',
         source_url: window.location.href,
         timestamp: new Date().toISOString()
+      };
+
+      const directLeadPayload = {
+        name,
+        phone,
+        email: email || '',
+        service: ritual,
+        lead_source: 'Website Booking Form',
+        status: 'New',
+        attributes: {
+          therapy: ritual,
+          date,
+          time,
+          message,
+          tenant_id: CRM_CONFIG.tenantId
+        }
       };
 
       const originalBtnText = submitBtn ? submitBtn.textContent : '';
@@ -200,17 +232,27 @@
       note.style.color = 'var(--gold-2)';
 
       try {
-        const res = await fetch('https://api.crm.vivtejsoftwaresolutions.com/api/internal-leads', {
+        // Send to internal-leads endpoint
+        const internalPromise = fetch(CRM_CONFIG.endpoint, {
           method: 'POST',
           headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'X-Tenant-Id': CRM_CONFIG.tenantId
           },
           body: JSON.stringify(payload)
-        });
+        }).catch(err => console.warn('internal-leads warning:', err));
 
-        if (!res.ok) {
-          throw new Error('Server returned ' + res.status);
-        }
+        // Send to tenant leads endpoint with dialine_spa authorization
+        const directPromise = fetch(CRM_CONFIG.leadsEndpoint, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${CRM_CONFIG.token}`
+          },
+          body: JSON.stringify(directLeadPayload)
+        }).catch(err => console.warn('direct lead warning:', err));
+
+        await Promise.all([internalPromise, directPromise]);
 
         const safeName = name.replace(/[&<>'"]/g, t => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[t]||t));
         note.style.color = 'var(--gold-2)';
