@@ -130,29 +130,113 @@
     setTimeout(() => f.name.focus({ preventScroll: true }), 700);
   });
 
-  // Reservation form -> opens WhatsApp with the request prefilled (no backend needed)
+  // Reservation form -> posts lead and booking data to Vivtej CRM API
   const form = $('#bookForm'), note = $('#formNote');
   if (form && note) {
-    form.addEventListener('submit', e => {
+    form.addEventListener('submit', async e => {
       e.preventDefault();
+      const submitBtn = $('#bookSubmitBtn', form) || $('button[type="submit"]', form);
       const d = new FormData(form);
-      const bad = ['name', 'email'].filter(k => {
-        const el = form[k], ok = k === 'email' ? /^\S+@\S+\.\S+$/.test(d.get(k)) : d.get(k).trim();
-        el.classList.toggle('is-invalid', !ok);
-        return !ok;
-      });
-      if (bad.length) { note.textContent = 'Please share your name and a valid email.'; return; }
-      const lines = [
-        'Hello Dialine Luxury Spa, I would like to request a reservation.',
-        `Name: ${d.get('name')}`, `Email: ${d.get('email')}`,
-        `Treatment: ${d.get('treatment')}`, `Preferred date: ${d.get('date') || 'Flexible'}`
-      ];
-      if (d.get('notes').trim()) lines.push(`Notes: ${d.get('notes').trim()}`);
-      window.open('https://wa.me/916303246142?text=' + encodeURIComponent(lines.join('\n')), '_blank', 'noopener');
-      note.textContent = 'Opening WhatsApp with your request — just press send. We look forward to welcoming you.';
-      form.reset();
+
+      const name = (d.get('name') || '').trim();
+      const phone = (d.get('phone') || '').trim();
+      const email = (d.get('email') || '').trim();
+      const treatmentRaw = (d.get('treatment') || '').trim();
+      const ritual = treatmentRaw ? treatmentRaw.split('·')[0].split('&middot;')[0].trim() : 'General Inquiry';
+      const date = d.get('date') || new Date().toISOString().slice(0, 10);
+      const time = d.get('time') || '14:00';
+      const message = (d.get('notes') || d.get('message') || '').trim();
+
+      const nameEl = form['name'];
+      const phoneEl = form['phone'];
+      const emailEl = form['email'];
+
+      let hasError = false;
+      if (!name) {
+        if (nameEl) nameEl.classList.add('is-invalid');
+        hasError = true;
+      }
+      if (!phone || phone.replace(/\D/g, '').length < 7) {
+        if (phoneEl) phoneEl.classList.add('is-invalid');
+        hasError = true;
+      }
+      if (email && !/^\S+@\S+\.\S+$/.test(email)) {
+        if (emailEl) emailEl.classList.add('is-invalid');
+        hasError = true;
+      }
+
+      if (hasError) {
+        note.textContent = 'Please provide your full name and a valid phone number.';
+        note.style.color = '#e07a68';
+        return;
+      }
+
+      const payload = {
+        name,
+        phone,
+        email: email || '',
+        ritual,
+        therapy: ritual,
+        date,
+        time,
+        message,
+        attributes: {
+          therapy: ritual,
+          date,
+          time,
+          message
+        },
+        source: 'Dialine Luxury Spa Website - Booking Form',
+        source_url: window.location.href,
+        timestamp: new Date().toISOString()
+      };
+
+      const originalBtnText = submitBtn ? submitBtn.textContent : '';
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Submitting reservation...';
+      }
+      note.textContent = 'Sending your reservation to concierge...';
+      note.style.color = 'var(--gold-2)';
+
+      try {
+        const res = await fetch('https://api.crm.vivtejsoftwaresolutions.com/api/internal-leads', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(payload)
+        });
+
+        if (!res.ok) {
+          throw new Error('Server returned ' + res.status);
+        }
+
+        const safeName = name.replace(/[&<>'"]/g, t => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[t]||t));
+        note.style.color = 'var(--gold-2)';
+        note.innerHTML = `Thank you, <strong>${safeName}</strong>! Your reservation request has been received. Our concierge will contact you shortly.`;
+        form.reset();
+
+        const waText = encodeURIComponent(`Hello Dialine Luxury Spa, I just submitted a booking request for ${ritual} on ${date} at ${time}.\nName: ${name}\nPhone: ${phone}`);
+        const waWrap = document.createElement('div');
+        waWrap.style.marginTop = '0.9rem';
+        waWrap.innerHTML = `<a href="https://wa.me/916303246142?text=${waText}" target="_blank" rel="noopener" class="btn btn--wa btn--sm" style="margin-inline:auto;">Chat on WhatsApp &rarr;</a>`;
+        note.appendChild(waWrap);
+
+      } catch (err) {
+        console.error('Lead submission failed:', err);
+        note.style.color = 'var(--gold-2)';
+        const waText = encodeURIComponent(`Hello Dialine Luxury Spa, I would like to book ${ritual} on ${date}.\nName: ${name}\nPhone: ${phone}`);
+        note.innerHTML = `Your reservation details are ready. <a href="https://wa.me/916303246142?text=${waText}" target="_blank" rel="noopener" style="color:var(--gold);text-decoration:underline;">Click here to confirm directly on WhatsApp &rarr;</a>`;
+      } finally {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.textContent = originalBtnText;
+        }
+      }
     });
-    $$('input', form).forEach(i => i.addEventListener('input', () => i.classList.remove('is-invalid')));
+
+    $$('input, select, textarea', form).forEach(i => i.addEventListener('input', () => i.classList.remove('is-invalid')));
   }
 
   // Deep link from a service page: index.html?ritual=Thai%20Yoga%20Massage#book

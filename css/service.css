@@ -25,6 +25,7 @@
 .svc-meta li{display:inline-flex;align-items:center;padding:.5rem 1.1rem;border:1px solid var(--line);border-radius:100px;background:rgba(11,15,13,.38);backdrop-filter:blur(10px);font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;color:var(--cream)}
 .svc-meta li.is-badge{border-color:var(--gold);background:var(--gold);color:#17130a;font-weight:500}
 .svc-hero__actions{display:flex;flex-wrap:wrap;gap:.9rem}
+.svc-hero__actions .btn{min-width:220px;min-height:52px;justify-content:center;text-align:center}
 
 /* -------------------------------------------------- benefits */
 .svc-benefits{background:radial-gradient(820px 480px at 88% 0%,rgba(201,169,106,.075),transparent 62%)}
@@ -51,6 +52,7 @@
 .svc-cta .container{max-width:760px}
 .svc-cta__lead{max-width:52ch;margin:1.5rem auto 2.5rem;color:var(--muted)}
 .svc-cta__actions{display:flex;flex-wrap:wrap;justify-content:center;gap:.9rem}
+.svc-cta__actions .btn{min-width:220px;min-height:52px;justify-content:center;text-align:center}
 
 /* ------------------------------------------------ responsive */
 @media (max-width:900px){
@@ -61,6 +63,6 @@
   .svc-hero__veil{background:linear-gradient(180deg,rgba(11,15,13,.74) 0%,rgba(11,15,13,.6) 42%,rgba(11,15,13,.97) 100%)}
   .svc-benefit{grid-template-columns:1fr;gap:1rem}
   .svc-benefit__icon{width:50px;height:50px}
-  .svc-hero__actions .btn,.svc-cta__actions .btn{flex:1 1 100%}
+  .svc-hero__actions .btn,.svc-cta__actions .btn{flex:1 1 100%;width:100%;min-width:0}
   .svc-meta li{font-size:.6rem;padding:.42rem .9rem}
 }

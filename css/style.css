@@ -38,8 +38,8 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .eyebrow--dark{color:#8a6f3b}
 
 /* Buttons */
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;padding:1.05rem 2.1rem;font-size:.78rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;border:1px solid transparent;border-radius:100px;transition:transform .4s var(--ease),background .4s,color .4s,border-color .4s,box-shadow .4s}
-.btn--sm{padding:.75rem 1.5rem;font-size:.7rem}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;min-height:52px;padding:.95rem 2.2rem;font-size:.78rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;border:1px solid transparent;border-radius:100px;text-align:center;white-space:nowrap;box-sizing:border-box;transition:transform .4s var(--ease),background .4s,color .4s,border-color .4s,box-shadow .4s}
+.btn--sm{min-height:48px;padding:.75rem 1.6rem;font-size:.75rem}
 .btn--block{width:100%}
 .btn--gold{background:linear-gradient(135deg,var(--gold-2),var(--gold) 55%,#b08d4e);color:#17130a;box-shadow:0 10px 30px -10px rgba(201,169,106,.55)}
 .btn--gold:hover{transform:translateY(-2px);box-shadow:0 16px 36px -10px rgba(201,169,106,.75)}
@@ -100,6 +100,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .is-loaded .hero__title .line:nth-child(2)>span{transition-delay:.7s}
 .hero__lead{max-width:34rem;font-size:1.15rem;color:#d8d2c4;margin-bottom:2.6rem}
 .hero__actions{display:flex;flex-wrap:wrap;gap:1rem}
+.hero__actions .btn{min-width:220px;min-height:52px;justify-content:center;text-align:center}
 .hero__side{position:absolute;right:var(--pad);top:50%;transform:translateY(-50%) rotate(180deg);writing-mode:vertical-rl;font-size:.68rem;letter-spacing:.45em;text-transform:uppercase;color:var(--gold);opacity:.8}
 .hero__scroll{position:absolute;left:var(--pad);bottom:8.5rem;display:flex;align-items:center;gap:1rem;font-size:.68rem;letter-spacing:.35em;text-transform:uppercase;color:var(--cream);opacity:.8}
 .hero__scroll i{display:block;width:1px;height:56px;background:linear-gradient(var(--gold),transparent);transform-origin:top;animation:drip 2.2s ease-in-out infinite}
@@ -112,7 +113,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .quick select,.quick input{background:none;border:0;color:var(--cream);font:inherit;font-size:1rem;width:100%;cursor:pointer;color-scheme:dark}
 .quick select option{color:#111}
 .quick select:focus,.quick input:focus{outline:none}
-.quick .btn{border-radius:16px;margin:.1rem}
+.quick .btn{border-radius:16px;margin:.1rem;min-height:52px;min-width:220px;padding:.95rem 1.8rem}
 
 /* Marquee */
 .marquee{overflow:hidden;background:var(--gold);color:#17130a;padding:1.1rem 0;border-block:1px solid #b08d4e}
@@ -202,6 +203,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .tier ul{display:grid;gap:.85rem;margin-bottom:2.4rem;flex:1}
 .tier li{position:relative;padding-left:1.7rem;font-size:.98rem;color:#cfc9bb}
 .tier li::before{content:"✦";position:absolute;left:0;top:.1rem;font-size:.7rem;color:var(--gold)}
+.tier .btn{width:100%;min-height:52px}
 
 /* Gallery */
 .gallery__grid{display:grid;grid-template-columns:repeat(12,1fr);grid-auto-rows:clamp(140px,17vw,250px);gap:1rem}
@@ -253,8 +255,9 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .btn--wa{background:#25d366;color:#07240f;box-shadow:0 10px 30px -10px rgba(37,211,102,.55)}
 .btn--wa:hover{transform:translateY(-2px);background:#3be07a}
 .book__cta{display:flex;flex-wrap:wrap;gap:.9rem;margin-bottom:2.2rem}
+.book__cta .btn{min-width:220px;min-height:52px;justify-content:center;text-align:center}
 .fab{position:fixed;right:clamp(.9rem,2.2vw,1.8rem);bottom:clamp(.9rem,2.2vw,1.8rem);z-index:90;display:flex;flex-direction:column;gap:.7rem;align-items:flex-end}
-.fab__btn{display:inline-flex;align-items:center;gap:.6rem;height:56px;padding:0 1.3rem 0 1.05rem;border-radius:100px;font-size:.72rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;box-shadow:0 14px 36px -10px rgba(0,0,0,.7);transition:transform .4s var(--ease),box-shadow .4s}
+.fab__btn{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;height:56px;min-width:150px;padding:0 1.3rem;border-radius:100px;font-size:.72rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;box-shadow:0 14px 36px -10px rgba(0,0,0,.7);transition:transform .4s var(--ease),box-shadow .4s}
 .fab__btn svg{width:26px;height:26px;fill:currentColor;flex:none}
 .fab__btn:hover{transform:translateY(-3px)}
 .fab__btn--call{background:var(--cream);color:#17130a;border:1px solid var(--gold)}
@@ -319,7 +322,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 @media (max-width:620px){
   body{font-size:1rem}
   .hero__content{padding-top:6.5rem}
-  .hero__actions .btn{flex:1 1 100%}
+  .hero__actions .btn,.book__cta .btn{flex:1 1 100%;width:100%;min-width:0}
   .hero{flex-direction:column;justify-content:center;align-items:stretch}
   .hero__content{padding-bottom:2rem}
   .quick{position:relative;left:auto;bottom:auto;transform:none;grid-template-columns:1fr;margin:0 auto 1.5rem;padding:.35rem}
