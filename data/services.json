@@ -1,0 +1,497 @@
+{
+  "site": {
+    "name": "Dialine Luxury Spa",
+    "city": "Visakhapatnam",
+    "phone": "+916303246142",
+    "phoneLabel": "+91 63032 46142",
+    "baseUrl": "https://dialinespa.com"
+  },
+  "groups": [
+    "Traditional & Holistic",
+    "Deep Tissue & Physical",
+    "Body & Bath",
+    "Premium & Signature"
+  ],
+  "services": [
+    {
+      "slug": "thai-yoga-massage",
+      "name": "Thai Yoga Massage",
+      "group": "Traditional & Holistic",
+      "shortGroup": "Holistic",
+      "eyebrow": "Ancient Healing Tradition",
+      "h1": "Thai Yoga Massage in Visakhapatnam",
+      "lead": "A rhythmic, dry therapy of assisted stretching and deep acupressure — unlocking vital energy pathways, easing chronic pain and returning length and ease to the body.",
+      "duration": "60 / 90 min",
+      "cardMeta": "60 / 90 min · Holistic",
+      "badge": null,
+      "intro": "Assisted stretching and rhythmic acupressure along the Sen lines to ease chronic pain and restore flexibility.",
+      "image": "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b",
+      "imageAlt": "Stretching silhouette against a sunset horizon",
+      "sectionHeading": "Restore Energy & Alignment",
+      "sectionHeadingEm": "& Alignment",
+      "benefits": [
+        {
+          "icon": "stretch",
+          "title": "Unlock Full-Body Flexibility",
+          "text": "Guided passive stretching lengthens short muscle fibres, releases compressed joint capsules and widens your daily range of motion."
+        },
+        {
+          "icon": "flow",
+          "title": "Stimulate the Sen Lines",
+          "text": "Deep palm and thumb compression traces the body's energy pathways, restoring a felt sense of balance and flow."
+        },
+        {
+          "icon": "spine",
+          "title": "Release Spinal Tension",
+          "text": "Dissolves the upper-back and neck stiffness left by long hours at a desk — the tension you stopped noticing."
+        }
+      ],
+      "methodology": {
+        "quote": "A traditional dry therapy, using thumbs, palms, elbows and knees to navigate the body's Sen Lines.",
+        "chips": [
+          "No oils or lotions",
+          "Comfortable attire provided",
+          "Passive yoga stretches",
+          "Rhythmic acupressure"
+        ]
+      },
+      "related": ["swedish-therapy", "deep-tissue-therapy", "aroma-massage"],
+      "seo": {
+        "title": "Thai Yoga Massage in Visakhapatnam | Dialine Luxury Spa",
+        "description": "Assisted stretching and deep acupressure in a private suite. 60 or 90 minutes of Thai Yoga Massage at Dialine Luxury Spa, Visakhapatnam."
+      }
+    },
+    {
+      "slug": "balinese-therapy",
+      "name": "Balinese Therapy",
+      "group": "Traditional & Holistic",
+      "shortGroup": "Holistic",
+      "eyebrow": "Ethereal Sensory Ritual",
+      "h1": "Balinese Therapy in Visakhapatnam",
+      "lead": "A gentle, deeply aromatic ritual bridging traditional Indonesian healing — long fluid strokes, skin rolling, precious oils and therapeutic acupressure to dissolve somatic stress.",
+      "duration": "60 / 90 min",
+      "cardMeta": "60 / 90 min · Holistic",
+      "badge": null,
+      "intro": "Long fluid strokes, skin rolling and warm botanical oils for a gentle, deeply aromatic descent into calm.",
+      "image": "https://images.unsplash.com/photo-1519823551278-64ac92734fb1",
+      "imageAlt": "Therapist performing gentle shoulder and back work",
+      "sectionHeading": "Deep Calm & Revitalization",
+      "sectionHeadingEm": "& Revitalization",
+      "benefits": [
+        {
+          "icon": "heart",
+          "title": "Melt Away Mind-Body Stress",
+          "text": "Rhythmic gliding strokes and warm aromatics settle the nervous system, easing tension at its source rather than chasing the symptom."
+        },
+        {
+          "icon": "flow",
+          "title": "Enhance Blood Circulation",
+          "text": "Traditional skin rolling and light percussion draw oxygen-rich blood to tired tissue and leave the body feeling awake."
+        },
+        {
+          "icon": "leaf",
+          "title": "Nourish Skin with Aromatics",
+          "text": "Warm coconut and flower essential oils hydrate deeply and shield dry skin with a soft botanical veil."
+        }
+      ],
+      "methodology": {
+        "quote": "A highly aromatic, low-to-medium pressure therapy combining skin rolling, percussion and long fluid strokes.",
+        "chips": [
+          "Warm botanical oils",
+          "Fluid gliding strokes",
+          "Skin rolling techniques",
+          "Soothing armed percussion"
+        ]
+      },
+      "related": ["aroma-massage", "swedish-therapy", "body-scrub"],
+      "seo": {
+        "title": "Balinese Therapy in Visakhapatnam | Dialine Luxury Spa",
+        "description": "Aromatic long-stroke Balinese therapy with warm botanical oils and skin rolling. 60 or 90 minutes at Dialine Luxury Spa, Visakhapatnam."
+      }
+    },
+    {
+      "slug": "swedish-therapy",
+      "name": "Swedish Therapy",
+      "group": "Deep Tissue & Physical",
+      "shortGroup": "Physical",
+      "eyebrow": "Classic Muscle Restoration",
+      "h1": "Swedish Therapy in Visakhapatnam",
+      "lead": "The time-honoured European standard for active muscle recovery. Five fundamental strokes — effleurage, petrissage, friction, tapotement and vibration — release tension and restore easy circulation.",
+      "duration": "60 / 90 min",
+      "cardMeta": "60 / 90 min · Physical",
+      "badge": null,
+      "intro": "The classic five-stroke European therapy to release tension, restore resting length and quiet the nervous system.",
+      "image": "https://images.unsplash.com/photo-1544161515-4ab6ce6db874",
+      "imageAlt": "Warm oil massage along the back",
+      "sectionHeading": "Relax & Re-energize Muscles",
+      "sectionHeadingEm": "Re-energize Muscles",
+      "benefits": [
+        {
+          "icon": "stretch",
+          "title": "Improve Muscle Elasticity & Recovery",
+          "text": "Kneading and friction dissolve the lactic-acid heaviness of training, so muscles lengthen and recover instead of staying guarded."
+        },
+        {
+          "icon": "flow",
+          "title": "Increase Joint Range of Motion",
+          "text": "Passive elongation and gentle joint warming return fluidity to movement and ease to posture."
+        },
+        {
+          "icon": "heart",
+          "title": "Decrease Systemic Cortisol",
+          "text": "Continuous, reassuring contact lowers blood pressure and quiets the physical signs of a long week."
+        }
+      ],
+      "methodology": {
+        "quote": "The classic five-stroke anatomical therapy, designed to restore resting length to hyper-contracted muscles.",
+        "chips": [
+          "Five classic strokes",
+          "Medium pressure control",
+          "Light nourishing bases",
+          "Anatomical focus"
+        ]
+      },
+      "related": ["deep-tissue-therapy", "thai-yoga-massage", "aroma-massage"],
+      "seo": {
+        "title": "Swedish Therapy in Visakhapatnam | Dialine Luxury Spa",
+        "description": "The classic five-stroke Swedish massage for muscle recovery and deep relaxation. 60 or 90 minutes at Dialine Luxury Spa, Visakhapatnam."
+      }
+    },
+    {
+      "slug": "deep-tissue-therapy",
+      "name": "Deep Tissue Massage",
+      "group": "Deep Tissue & Physical",
+      "shortGroup": "Physical",
+      "eyebrow": "Advanced Muscle Realignment",
+      "h1": "Deep Tissue Massage in Visakhapatnam",
+      "lead": "Slow, deliberate work into the deepest layers of muscle and fascia. Forearms, knuckles and heated basalt stones break up stubborn adhesions and the chronic tension they hold.",
+      "duration": "60 / 90 min",
+      "cardMeta": "60 / 90 min · Physical",
+      "badge": null,
+      "intro": "Slow deliberate forearm work and heated basalt stones to break up fascial adhesions and chronic lumbar tension.",
+      "image": "https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2",
+      "imageAlt": "Heated basalt stones resting along the spine",
+      "sectionHeading": "Dissolve Stubborn Pain",
+      "sectionHeadingEm": "Stubborn Pain",
+      "benefits": [
+        {
+          "icon": "spine",
+          "title": "Break Up Dense Fascial Adhesions",
+          "text": "Direct cross-fibre friction softens rigid fascia, unbinding nerve pathways and the muscles they have been guarding."
+        },
+        {
+          "icon": "pressure",
+          "title": "Relieve Chronic Lumbar Pain",
+          "text": "Deep forearm and knuckle pressure reaches the lumbar spine, hips and shoulders where tension settles and stays."
+        },
+        {
+          "icon": "flame",
+          "title": "Heated Basalt Stone Placement",
+          "text": "Smooth hot stones are aligned along the spine, warming deep tissue before the deeper work begins."
+        }
+      ],
+      "methodology": {
+        "quote": "An intense, slow-stroke therapy using forearms, elbows and heated basalt stones to realign deep tissue fibres.",
+        "chips": [
+          "Heavy pressure sessions",
+          "Slow deliberate strokes",
+          "Deep fascial penetration",
+          "Basalt stone placement"
+        ]
+      },
+      "related": ["swedish-therapy", "rope-therapy", "thai-yoga-massage"],
+      "seo": {
+        "title": "Deep Tissue Massage in Visakhapatnam | Dialine Luxury Spa",
+        "description": "Deep forearm and basalt-stone work for chronic tension and stubborn knots. 60 or 90 minutes at Dialine Luxury Spa, Visakhapatnam."
+      }
+    },
+    {
+      "slug": "rope-therapy",
+      "name": "Rope Therapy",
+      "group": "Deep Tissue & Physical",
+      "shortGroup": "Physical",
+      "eyebrow": "Suspended Traction Therapy",
+      "h1": "Rope Therapy in Visakhapatnam",
+      "lead": "A traditional deep-stretch technique in which the therapist uses overhead ropes for balance, delivering broad, controlled pressure with the feet to decompress the spine.",
+      "duration": "60 / 90 min",
+      "cardMeta": "60 / 90 min · Physical",
+      "badge": null,
+      "intro": "Suspended rope traction and controlled foot pressure for spinal decompression, posture and muscle symmetry.",
+      "image": "https://images.unsplash.com/photo-1600881333168-2ef49b341f30",
+      "imageAlt": "Deep stretch into downward dog in a quiet studio",
+      "sectionHeading": "Spinal Traction & Release",
+      "sectionHeadingEm": "& Release",
+      "benefits": [
+        {
+          "icon": "pressure",
+          "title": "Deep Foot Acupressure Compression",
+          "text": "Highly controlled broad pressure through the feet reaches the large muscle groups of the back that hands alone cannot."
+        },
+        {
+          "icon": "spine",
+          "title": "Spinal Decompression & Traction",
+          "text": "Gravity-assisted alignment relieves pressure on the discs and calms the irritation that travels down the sciatic nerve."
+        },
+        {
+          "icon": "stretch",
+          "title": "Aids Posture & Muscle Symmetry",
+          "text": "A reset for athletes and anyone whose posture has quietly drifted — restoring balance left to right."
+        }
+      ],
+      "methodology": {
+        "quote": "A traditional deep-tissue dry compression technique, using suspended overhead ropes to distribute weight.",
+        "chips": [
+          "Suspended rope stability",
+          "Controlled foot pressure",
+          "Deep spinal decompression",
+          "Traditional dry sessions"
+        ]
+      },
+      "related": ["deep-tissue-therapy", "thai-yoga-massage", "hammam-therapy"],
+      "seo": {
+        "title": "Rope Therapy in Visakhapatnam | Dialine Luxury Spa",
+        "description": "Traditional suspended rope traction for spinal decompression and postural realignment. 60 or 90 minutes at Dialine Luxury Spa, Visakhapatnam."
+      }
+    },
+    {
+      "slug": "hammam-therapy",
+      "name": "Hammam Therapy",
+      "group": "Body & Bath",
+      "shortGroup": "Bath",
+      "eyebrow": "Turkish Bathing Purification",
+      "h1": "Hammam Therapy in Visakhapatnam",
+      "lead": "Our warm stone steam chamber, in the classic Turkish tradition — dry heat, deep kessa exfoliation and a cloud of eucalyptus soap bubbles.",
+      "duration": "90 / 120 min",
+      "cardMeta": "90 / 120 min · Bath",
+      "badge": null,
+      "intro": "A Turkish steam ritual with authentic kessa exfoliation, thermal pore opening and eucalyptus bubble bathing.",
+      "image": "https://images.unsplash.com/photo-1583416750470-965b2707b355",
+      "imageAlt": "Warm timber steam chamber",
+      "sectionHeading": "Pure Cellular Cleansing",
+      "sectionHeadingEm": "Cellular Cleansing",
+      "benefits": [
+        {
+          "icon": "scrub",
+          "title": "Deep Kessa Exfoliation & Renewal",
+          "text": "Firm kessa scrubbing lifts away dead surface cells, revealing skin that feels startlingly new."
+        },
+        {
+          "icon": "steam",
+          "title": "Thermal Steam Opening",
+          "text": "Warm humid air opens the pores so trapped toxins, sebum and city grit can finally leave."
+        },
+        {
+          "icon": "drop",
+          "title": "Eucalyptus Bubble Foam Massage",
+          "text": "A warm blanket of eucalyptus-infused lather soothes muscle and mind at once."
+        }
+      ],
+      "methodology": {
+        "quote": "A warm thermal wet ritual incorporating deep kessa scrubbing, steam opening and olive-oil foam bathing.",
+        "chips": [
+          "Steam & warm stone chamber",
+          "Authentic kessa glove",
+          "Eucalyptus bubble bath",
+          "Olive oil soaps"
+        ]
+      },
+      "related": ["body-scrub", "signature-candle-therapy", "couple-therapy"],
+      "seo": {
+        "title": "Hammam Therapy in Visakhapatnam | Dialine Luxury Spa",
+        "description": "Turkish steam bathing with authentic kessa exfoliation and eucalyptus foam. 90 or 120 minutes at Dialine Luxury Spa, Visakhapatnam."
+      }
+    },
+    {
+      "slug": "body-scrub",
+      "name": "Body Scrub",
+      "group": "Body & Bath",
+      "shortGroup": "Bath",
+      "eyebrow": "Botanical Exfoliation Ritual",
+      "h1": "Body Scrub in Visakhapatnam",
+      "lead": "A full-body polishing ritual with organic micro-grains — coffee, apricot kernel or marine salt — blended into rich botanical oils and worked in slow, circular passes.",
+      "duration": "60 / 90 / 120 min",
+      "cardMeta": "60 / 90 / 120 min · Bath",
+      "badge": null,
+      "intro": "Organic coffee, apricot or sea-salt micro-grains polished in with almond and jojoba oils for velvety skin.",
+      "image": "https://images.unsplash.com/photo-1507652313519-d4e9174996dd",
+      "imageAlt": "Stone soaking tub in a candlelit bathing suite",
+      "sectionHeading": "Radiant Skin Renewal",
+      "sectionHeadingEm": "Skin Renewal",
+      "benefits": [
+        {
+          "icon": "scrub",
+          "title": "Thorough Cellular Exfoliation",
+          "text": "Micro-exfoliants lift rough surface cells away, refining texture and evening tone from shoulder to ankle."
+        },
+        {
+          "icon": "drop",
+          "title": "Intense Botanical Oil Hydration",
+          "text": "Almond and jojoba oils, blended into the scrub itself, lock moisture in the moment the polish finishes."
+        },
+        {
+          "icon": "flow",
+          "title": "Boost Micro-circulation",
+          "text": "Invigorating circular friction moves stagnant blood, carrying nutrients where the skin has been asking for them."
+        }
+      ],
+      "methodology": {
+        "quote": "A classic full-body skin polishing treatment, using organic exfoliants and hydrating plant oils to restore natural radiance.",
+        "chips": [
+          "Organic micro-grains",
+          "Circular friction polishing",
+          "Botanical hydrating base",
+          "Warm concierge shower"
+        ]
+      },
+      "related": ["hammam-therapy", "signature-candle-therapy", "balinese-therapy"],
+      "seo": {
+        "title": "Body Scrub in Visakhapatnam | Dialine Luxury Spa",
+        "description": "Full-body botanical exfoliation with coffee, apricot or sea-salt grains and hydrating oils. 60, 90 or 120 minutes at Dialine Luxury Spa."
+      }
+    },
+    {
+      "slug": "aroma-massage",
+      "name": "Aroma Massage",
+      "group": "Body & Bath",
+      "shortGroup": "Bath",
+      "eyebrow": "Olfactory Serenity & Touch",
+      "h1": "Aroma Massage in Visakhapatnam",
+      "lead": "A personal blend, chosen with you before you lie down. Pure botanical essential oils meet light, warm strokes to settle the nervous system through scent and touch together.",
+      "duration": "60 / 90 min",
+      "cardMeta": "60 / 90 min · Bath",
+      "badge": null,
+      "intro": "Bespoke organic essential-oil blends with light warm strokes to calm the nervous system and deepen sleep.",
+      "image": "https://images.unsplash.com/photo-1515377905703-c4788e51af15",
+      "imageAlt": "Essential oil being poured by hand",
+      "sectionHeading": "Tranquilize Your Senses",
+      "sectionHeadingEm": "Your Senses",
+      "benefits": [
+        {
+          "icon": "heart",
+          "title": "Calm the Autonomic Nervous System",
+          "text": "Inhaling therapeutic-grade lavender and eucalyptus slows the heart and lowers the stress hormones that keep you braced."
+        },
+        {
+          "icon": "drop",
+          "title": "Promote Restorative Sleep",
+          "text": "The ritual quiets circling thoughts and leaves the body ready for the deeper sleep it has been missing."
+        },
+        {
+          "icon": "leaf",
+          "title": "Support Lymphatic Drainage",
+          "text": "Very light, rhythmic pressure encourages the body's own clearance of waste and eases lingering inflammation."
+        }
+      ],
+      "methodology": {
+        "quote": "A light-pressure, fluid massage focusing on scent inhalation, cellular hydration and soothing nerve-ending stimulation.",
+        "chips": [
+          "Organic botanical extracts",
+          "Light fluid touch",
+          "Custom aromatic blends",
+          "Detoxifying drainage"
+        ]
+      },
+      "related": ["balinese-therapy", "swedish-therapy", "signature-candle-therapy"],
+      "seo": {
+        "title": "Aroma Massage in Visakhapatnam | Dialine Luxury Spa",
+        "description": "Bespoke essential-oil blends and light warm strokes to calm the nervous system. 60 or 90 minutes at Dialine Luxury Spa, Visakhapatnam."
+      }
+    },
+    {
+      "slug": "couple-therapy",
+      "name": "Couple Therapy",
+      "group": "Premium & Signature",
+      "shortGroup": "Premium",
+      "eyebrow": "Shared Sanctuary Ritual",
+      "h1": "Couple Therapy in Visakhapatnam",
+      "lead": "Two tables, one quiet room. Each ritual tailored to its own body, with warm herbal compresses, candlelight and a private lounge to linger in afterwards.",
+      "duration": "60 / 90 / 120 min",
+      "cardMeta": "60 / 90 / 120 min · Premium",
+      "badge": "Exclusive",
+      "intro": "Side-by-side rituals in a private dual suite, each tailored, with warm herbal compresses and post-therapy refreshments.",
+      "image": "https://images.unsplash.com/photo-1560750588-73207b1ef5b8",
+      "imageAlt": "Private suite with plunge pool, timber and greenery",
+      "sectionHeading": "Synchronized Restoration",
+      "sectionHeadingEm": "Restoration",
+      "benefits": [
+        {
+          "icon": "heart",
+          "title": "Shared Stress Decompression",
+          "text": "Relaxing side by side, at the same pace, turns a treatment into a memory you both keep."
+        },
+        {
+          "icon": "leaf",
+          "title": "Dual Tailored Treatments",
+          "text": "Each of you chooses pressure and aroma independently — no compromise, no compromise on the other."
+        },
+        {
+          "icon": "flame",
+          "title": "VIP Post-Therapy Lounge",
+          "text": "The ritual closes with organic teas, seasonal fruit and a little time that belongs to no one else."
+        }
+      ],
+      "methodology": {
+        "quote": "A premium dual-suite experience, tailored to two bodies at once in a synchronised, candlelit sanctuary.",
+        "chips": [
+          "Synchronized massage tables",
+          "Private dual suite",
+          "Tailored pressure choice",
+          "Complimentary concierge refresh"
+        ]
+      },
+      "related": ["signature-candle-therapy", "hammam-therapy", "aroma-massage"],
+      "seo": {
+        "title": "Couple Therapy in Visakhapatnam | Dialine Luxury Spa",
+        "description": "A private dual suite for two, with tailored rituals, herbal compresses and post-therapy refreshments. 60, 90 or 120 minutes at Dialine."
+      }
+    },
+    {
+      "slug": "signature-candle-therapy",
+      "name": "Signature Candle Therapy",
+      "group": "Premium & Signature",
+      "shortGroup": "Premium",
+      "eyebrow": "Luxurious Warm Wax Infusion",
+      "h1": "Signature Candle Therapy in Visakhapatnam",
+      "lead": "Cosmetic-grade candle wax, warmed to skin temperature and poured in long ribbons. Shea butter and soy oils sink in while the gentle heat loosens what cold tension holds.",
+      "duration": "60 / 90 / 120 min",
+      "cardMeta": "60 / 90 / 120 min · Premium",
+      "badge": "Signature",
+      "intro": "Warm shea and soy candle wax drizzled over the skin for deep hydration, thermal relief and botanical aroma.",
+      "image": "https://images.unsplash.com/photo-1603006905003-be475563bc59",
+      "imageAlt": "Warm candlelight in a dim treatment room",
+      "sectionHeading": "Thermal Heat & Hydration",
+      "sectionHeadingEm": "& Hydration",
+      "benefits": [
+        {
+          "icon": "drop",
+          "title": "Intense Skin Hydration & Nutrition",
+          "text": "Warm soy and shea oils reach past the surface, leaving skin supple long after the session ends."
+        },
+        {
+          "icon": "flame",
+          "title": "Soothing Thermal Relief",
+          "text": "Gentle, even heat widens the capillaries around stiff joints and settles muscles that resist pressure."
+        },
+        {
+          "icon": "leaf",
+          "title": "Harmonizing Botanical Aromas",
+          "text": "Warm vanilla and patchouli drift through the room, softening the edges of a restless mind."
+        }
+      ],
+      "methodology": {
+        "quote": "A warm thermal massage, using skin-safe cosmetic candle wax to deeply nourish tissue and deliver soothing heat.",
+        "chips": [
+          "Cosmetic shea butter wax",
+          "Warm temperature drizzle",
+          "Thermal joint decompression",
+          "Long coating strokes"
+        ]
+      },
+      "related": ["couple-therapy", "body-scrub", "aroma-massage"],
+      "seo": {
+        "title": "Signature Candle Therapy in Visakhapatnam | Dialine",
+        "description": "Warm shea and soy candle wax for deep hydration and thermal relief. 60, 90 or 120 minutes at Dialine Luxury Spa, Visakhapatnam."
+      }
+    }
+  ]
+}

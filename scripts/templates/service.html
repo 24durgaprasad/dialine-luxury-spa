@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{TITLE}}</title>
+  <meta name="description" content="{{DESCRIPTION}}">
+  <meta name="theme-color" content="#0b0f0d">
+  <link rel="canonical" href="{{CANONICAL}}">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="{{TITLE}}">
+  <meta property="og:description" content="{{DESCRIPTION}}">
+  <meta property="og:image" content="{{OG_IMAGE}}">
+  <meta property="og:url" content="{{CANONICAL}}">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/service.css">
+  <link rel="preload" as="image" href="{{HERO_PRELOAD}}" fetchpriority="high">
+
+  <script type="application/ld+json">
+  {{JSONLD}}
+  </script>
+</head>
+<body>
+
+{{HEADER}}
+
+  <main id="top">
+
+    <!-- Service hero -->
+    <section class="svc-hero">
+      <div class="svc-hero__media">
+        <img src="{{HERO_IMG}}" alt="{{HERO_ALT}}" fetchpriority="high" width="1600" height="1000">
+      </div>
+      <div class="svc-hero__veil"></div>
+      <div class="svc-hero__grain"></div>
+
+      <div class="container svc-hero__inner">
+        <nav class="crumbs" aria-label="Breadcrumb">
+          <a href="index.html">Home</a><span aria-hidden="true">/</span>
+          <a href="index.html#treatments">Treatments</a><span aria-hidden="true">/</span>
+          <span aria-current="page">{{NAME}}</span>
+        </nav>
+
+        <p class="eyebrow reveal"><span></span>{{EYEBROW}}</p>
+        <h1 class="svc-hero__title reveal">{{NAME}} <em>in Visakhapatnam</em></h1>
+        <p class="svc-hero__lead reveal" style="--d:.1s">{{LEAD}}</p>
+
+        <ul class="svc-meta reveal" style="--d:.2s">
+          <li>{{DURATION}}</li>
+          <li>{{GROUP}}</li>
+          {{BADGE}}
+        </ul>
+
+        <div class="svc-hero__actions reveal" style="--d:.3s">
+          <a class="btn btn--gold" href="{{BOOK_HREF}}">Reserve this ritual</a>
+          <a class="btn btn--ghost" href="index.html#treatments">All treatments</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Benefits -->
+    <section class="section svc-benefits">
+      <div class="container">
+        <header class="section__head">
+          <p class="eyebrow reveal"><span></span>The Experience</p>
+          <h2 class="h2 reveal">{{SECTION_HEADING_HTML}}</h2>
+        </header>
+        <ul class="svc-list">
+          {{BENEFITS}}
+        </ul>
+      </div>
+    </section>
+
+    <!-- Methodology -->
+    <section class="section section--cream svc-method">
+      <div class="container">
+        <p class="eyebrow eyebrow--dark reveal"><span></span>The Methodology</p>
+        <blockquote class="reveal">
+          <p>&ldquo;{{QUOTE}}&rdquo;</p>
+        </blockquote>
+        <ul class="svc-chips reveal">
+          {{CHIPS}}
+        </ul>
+      </div>
+    </section>
+
+    <!-- Related -->
+    <section class="section svc-related">
+      <div class="container">
+        <header class="section__head">
+          <p class="eyebrow reveal"><span></span>Continue</p>
+          <h2 class="h2 reveal">Rituals that <em>pair well.</em></h2>
+        </header>
+        <div class="cards svc-related__cards">
+          {{RELATED}}
+        </div>
+      </div>
+    </section>
+
+    <!-- Closing CTA -->
+    <section class="section svc-cta">
+      <div class="container center">
+        <p class="eyebrow reveal"><span></span>Reservations</p>
+        <h2 class="h2 reveal">Your sanctuary <em>awaits.</em></h2>
+        <p class="svc-cta__lead reveal">Tell us how you wish to feel. Our concierge will hold your preferred time, and the room will be ready before you arrive.</p>
+        <div class="svc-cta__actions reveal">
+          <a class="btn btn--gold" href="{{BOOK_HREF}}">Reserve {{NAME}}</a>
+          <a class="btn btn--wa" href="https://wa.me/916303246142?text={{WA_TEXT}}" target="_blank" rel="noopener">WhatsApp us</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+{{FOOTER}}

@@ -1,0 +1,11 @@
+{
+  "name": "dialine-luxury-spa",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Dialine Luxury Spa — static site",
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build-services.mjs",
+    "check": "node scripts/build-services.mjs --check"
+  }
+}

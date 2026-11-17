@@ -4,14 +4,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Dialine Luxury Spa — Where Stillness Becomes Luxury</title>
-  <meta name="description" content="Dialine Luxury Spa in Visakhapatnam is a sanctuary of slow, deeply personal wellness — signature massages, bespoke facials, jacuzzi and thermal rituals designed to restore body, mind and spirit.">
+  <meta name="description" content="Dialine Luxury Spa in Visakhapatnam is a sanctuary of slow, personal wellness — Thai Yoga, Balinese, Swedish and deep tissue massage, hammam, body scrubs and warm candle rituals.">
   <meta name="theme-color" content="#0b0f0d">
   <link rel="canonical" href="https://dialinespa.com/">
   <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
 
   <meta property="og:type" content="website">
   <meta property="og:title" content="Dialine Luxury Spa — Where Stillness Becomes Luxury">
-  <meta property="og:description" content="Signature massages, bespoke facials, thermal rituals and private suites. Book your sanctuary.">
+  <meta property="og:description" content="Ten rituals across four traditions — Thai Yoga, Balinese, deep tissue, hammam and candle therapy. Book your sanctuary.">
   <meta property="og:image" content="https://images.unsplash.com/photo-1583416750470-965b2707b355?auto=format&fit=crop&w=1200&h=630&q=75">
   <meta name="twitter:card" content="summary_large_image">
 
@@ -25,12 +25,28 @@
     "@context": "https://schema.org",
     "@type": "DaySpa",
     "name": "Dialine Luxury Spa",
-    "description": "A luxury day spa in Visakhapatnam offering massage treatments, facials and jacuzzi services.",
+    "description": "A luxury day spa in Visakhapatnam offering traditional, deep tissue, bath and signature massage rituals.",
     "image": "https://images.unsplash.com/photo-1583416750470-965b2707b355?auto=format&fit=crop&w=1200&q=75",
     "priceRange": "$$$",
     "telephone": "+91-63032-46142",
     "url": "https://dialinespa.com",
-    "address": {"@type":"PostalAddress","streetAddress":"Horizon Enclave, Nowroji Rd, Daspalla Hills, Maharani Peta","addressLocality":"Visakhapatnam","addressRegion":"Andhra Pradesh","postalCode":"530002","addressCountry":"IN"}
+    "address": {"@type":"PostalAddress","streetAddress":"Horizon Enclave, Nowroji Rd, Daspalla Hills, Maharani Peta","addressLocality":"Visakhapatnam","addressRegion":"Andhra Pradesh","postalCode":"530002","addressCountry":"IN"},
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Spa Rituals",
+      "itemListElement": [
+        {"@type":"Offer","itemOffered":{"@type":"Service","name":"Thai Yoga Massage","url":"https://dialinespa.com/thai-yoga-massage"}},
+        {"@type":"Offer","itemOffered":{"@type":"Service","name":"Balinese Therapy","url":"https://dialinespa.com/balinese-therapy"}},
+        {"@type":"Offer","itemOffered":{"@type":"Service","name":"Swedish Therapy","url":"https://dialinespa.com/swedish-therapy"}},
+        {"@type":"Offer","itemOffered":{"@type":"Service","name":"Deep Tissue Massage","url":"https://dialinespa.com/deep-tissue-therapy"}},
+        {"@type":"Offer","itemOffered":{"@type":"Service","name":"Rope Therapy","url":"https://dialinespa.com/rope-therapy"}},
+        {"@type":"Offer","itemOffered":{"@type":"Service","name":"Hammam Therapy","url":"https://dialinespa.com/hammam-therapy"}},
+        {"@type":"Offer","itemOffered":{"@type":"Service","name":"Body Scrub","url":"https://dialinespa.com/body-scrub"}},
+        {"@type":"Offer","itemOffered":{"@type":"Service","name":"Aroma Massage","url":"https://dialinespa.com/aroma-massage"}},
+        {"@type":"Offer","itemOffered":{"@type":"Service","name":"Couple Therapy","url":"https://dialinespa.com/couple-therapy"}},
+        {"@type":"Offer","itemOffered":{"@type":"Service","name":"Signature Candle Therapy","url":"https://dialinespa.com/signature-candle-therapy"}}
+      ]
+    }
   }
   </script>
 </head>
@@ -104,11 +120,18 @@
       <form class="quick" id="quickForm" aria-label="Quick reservation">
         <label><span>Treatment</span>
           <select name="treatment">
-            <option>Signature Massage</option>
-            <option>Bespoke Facial</option>
-            <option>Hot Stone Therapy</option>
-            <option>Aromatherapy Ritual</option>
-            <option>Jacuzzi Suite</option>
+            <!-- SELECT:BEGIN -->
+            <option>Thai Yoga Massage &middot; 60 / 90 min</option>
+            <option>Balinese Therapy &middot; 60 / 90 min</option>
+            <option>Swedish Therapy &middot; 60 / 90 min</option>
+            <option>Deep Tissue Massage &middot; 60 / 90 min</option>
+            <option>Rope Therapy &middot; 60 / 90 min</option>
+            <option>Hammam Therapy &middot; 90 / 120 min</option>
+            <option>Body Scrub &middot; 60 / 90 / 120 min</option>
+            <option>Aroma Massage &middot; 60 / 90 min</option>
+            <option>Couple Therapy &middot; 60 / 90 / 120 min</option>
+            <option>Signature Candle Therapy &middot; 60 / 90 / 120 min</option>
+<!-- SELECT:END -->
           </select>
         </label>
         <label><span>Date</span><input type="date" name="date" id="quickDate"></label>
@@ -122,8 +145,8 @@
     <!-- MARQUEE -->
     <div class="marquee" aria-hidden="true">
       <div class="marquee__track">
-        <span>Massage</span><i>✦</i><span>Facials</span><i>✦</i><span>Thermal Rituals</span><i>✦</i><span>Aromatherapy</span><i>✦</i><span>Jacuzzi Suites</span><i>✦</i><span>Body Sculpting</span><i>✦</i>
-        <span>Massage</span><i>✦</i><span>Facials</span><i>✦</i><span>Thermal Rituals</span><i>✦</i><span>Aromatherapy</span><i>✦</i><span>Jacuzzi Suites</span><i>✦</i><span>Body Sculpting</span><i>✦</i>
+        <span>Thai Yoga</span><i>✦</i><span>Balinese</span><i>✦</i><span>Deep Tissue</span><i>✦</i><span>Rope Therapy</span><i>✦</i><span>Hammam</span><i>✦</i><span>Body Scrub</span><i>✦</i><span>Aroma Massage</span><i>✦</i><span>Candle Therapy</span><i>✦</i>
+        <span>Thai Yoga</span><i>✦</i><span>Balinese</span><i>✦</i><span>Deep Tissue</span><i>✦</i><span>Rope Therapy</span><i>✦</i><span>Hammam</span><i>✦</i><span>Body Scrub</span><i>✦</i><span>Aroma Massage</span><i>✦</i><span>Candle Therapy</span><i>✦</i>
       </div>
     </div>
 
@@ -159,48 +182,143 @@
       <div class="container">
         <header class="section__head">
           <p class="eyebrow reveal"><span></span>Signature Treatments</p>
-          <h2 class="h2 reveal">Rituals composed <em>for you.</em></h2>
-          <p class="section__sub reveal">Each treatment begins with a private consultation and unfolds at your pace — never rushed, never repeated.</p>
+          <h2 class="h2 reveal">Ten rituals, <em>one intention.</em></h2>
+          <p class="section__sub reveal">From ancient Thai and Balinese bodywork to Turkish hammam and warm candle wax — every ritual begins with a private consultation and unfolds at your pace.</p>
         </header>
 
-        <div class="cards">
-          <article class="card card--tall reveal">
-            <div class="card__img"><img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=900&q=75" alt="Therapist pouring warm oil on a guest's back" loading="lazy"></div>
+        <!-- SERVICES:BEGIN -->
+        <div class="group">
+          <header class="group__head reveal">
+            <p class="eyebrow"><span></span>Traditional &amp; Holistic</p>
+          </header>
+          <div class="cards cards--2">
+          <article class="card reveal" style="--d:0.00s">
+            <div class="card__img"><img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=900&q=70" alt="Stretching silhouette against a sunset horizon" loading="lazy" width="900" height="700"></div>
+            
             <div class="card__body">
-              <span class="card__meta">90 min · Body</span>
-              <h3>Dialine Signature Massage</h3>
-              <p>Slow, flowing strokes with warmed botanical oils to dissolve tension and restore deep calm.</p>
-              <a href="#book" class="link">Reserve <span>→</span></a>
+              <span class="card__meta">60 / 90 min · Holistic</span>
+              <h3><a class="card__link" href="thai-yoga-massage.html">Thai Yoga Massage</a></h3>
+              <p>Assisted stretching and rhythmic acupressure along the Sen lines to ease chronic pain and restore flexibility.</p>
+              <span class="link" aria-hidden="true">Discover <span>&rarr;</span></span>
             </div>
           </article>
-          <article class="card reveal" style="--d:.1s">
-            <div class="card__img"><img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=900&q=75" alt="Guest enjoying a clay facial mask" loading="lazy"></div>
+          <article class="card reveal" style="--d:0.08s">
+            <div class="card__img"><img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&w=900&q=70" alt="Therapist performing gentle shoulder and back work" loading="lazy" width="900" height="700"></div>
+            
             <div class="card__body">
-              <span class="card__meta">75 min · Face</span>
-              <h3>Bespoke Radiance Facial</h3>
-              <p>A skin-first ritual with mineral masks and lymphatic sculpting for a lit-from-within glow.</p>
-              <a href="#book" class="link">Reserve <span>→</span></a>
+              <span class="card__meta">60 / 90 min · Holistic</span>
+              <h3><a class="card__link" href="balinese-therapy.html">Balinese Therapy</a></h3>
+              <p>Long fluid strokes, skin rolling and warm botanical oils for a gentle, deeply aromatic descent into calm.</p>
+              <span class="link" aria-hidden="true">Discover <span>&rarr;</span></span>
             </div>
           </article>
-          <article class="card reveal" style="--d:.2s">
-            <div class="card__img"><img src="https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?auto=format&fit=crop&w=900&q=75" alt="Heated basalt stones and orchids along the back" loading="lazy"></div>
-            <div class="card__body">
-              <span class="card__meta">100 min · Body</span>
-              <h3>Basalt Hot Stone Therapy</h3>
-              <p>Volcanic stones, heated to perfection, melt deep-seated knots and quiet an overworked mind.</p>
-              <a href="#book" class="link">Reserve <span>→</span></a>
-            </div>
-          </article>
-          <article class="card card--wide reveal">
-            <div class="card__img"><img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1200&q=75" alt="Essential oil being blended by hand" loading="lazy"></div>
-            <div class="card__body">
-              <span class="card__meta">60 min · Aromatherapy</span>
-              <h3>The Aromatherapy Atelier</h3>
-              <p>Blend your own essence with our perfumer, then experience it layered into a restorative massage.</p>
-              <a href="#book" class="link">Reserve <span>→</span></a>
-            </div>
-          </article>
+          </div>
         </div>
+
+        <div class="group">
+          <header class="group__head reveal">
+            <p class="eyebrow"><span></span>Deep Tissue &amp; Physical</p>
+          </header>
+          <div class="cards">
+          <article class="card reveal" style="--d:0.00s">
+            <div class="card__img"><img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=900&q=70" alt="Warm oil massage along the back" loading="lazy" width="900" height="700"></div>
+            
+            <div class="card__body">
+              <span class="card__meta">60 / 90 min · Physical</span>
+              <h3><a class="card__link" href="swedish-therapy.html">Swedish Therapy</a></h3>
+              <p>The classic five-stroke European therapy to release tension, restore resting length and quiet the nervous system.</p>
+              <span class="link" aria-hidden="true">Discover <span>&rarr;</span></span>
+            </div>
+          </article>
+          <article class="card reveal" style="--d:0.08s">
+            <div class="card__img"><img src="https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?auto=format&fit=crop&w=900&q=70" alt="Heated basalt stones resting along the spine" loading="lazy" width="900" height="700"></div>
+            
+            <div class="card__body">
+              <span class="card__meta">60 / 90 min · Physical</span>
+              <h3><a class="card__link" href="deep-tissue-therapy.html">Deep Tissue Massage</a></h3>
+              <p>Slow deliberate forearm work and heated basalt stones to break up fascial adhesions and chronic lumbar tension.</p>
+              <span class="link" aria-hidden="true">Discover <span>&rarr;</span></span>
+            </div>
+          </article>
+          <article class="card reveal" style="--d:0.16s">
+            <div class="card__img"><img src="https://images.unsplash.com/photo-1600881333168-2ef49b341f30?auto=format&fit=crop&w=900&q=70" alt="Deep stretch into downward dog in a quiet studio" loading="lazy" width="900" height="700"></div>
+            
+            <div class="card__body">
+              <span class="card__meta">60 / 90 min · Physical</span>
+              <h3><a class="card__link" href="rope-therapy.html">Rope Therapy</a></h3>
+              <p>Suspended rope traction and controlled foot pressure for spinal decompression, posture and muscle symmetry.</p>
+              <span class="link" aria-hidden="true">Discover <span>&rarr;</span></span>
+            </div>
+          </article>
+          </div>
+        </div>
+
+        <div class="group">
+          <header class="group__head reveal">
+            <p class="eyebrow"><span></span>Body &amp; Bath</p>
+          </header>
+          <div class="cards">
+          <article class="card reveal" style="--d:0.00s">
+            <div class="card__img"><img src="https://images.unsplash.com/photo-1583416750470-965b2707b355?auto=format&fit=crop&w=900&q=70" alt="Warm timber steam chamber" loading="lazy" width="900" height="700"></div>
+            
+            <div class="card__body">
+              <span class="card__meta">90 / 120 min · Bath</span>
+              <h3><a class="card__link" href="hammam-therapy.html">Hammam Therapy</a></h3>
+              <p>A Turkish steam ritual with authentic kessa exfoliation, thermal pore opening and eucalyptus bubble bathing.</p>
+              <span class="link" aria-hidden="true">Discover <span>&rarr;</span></span>
+            </div>
+          </article>
+          <article class="card reveal" style="--d:0.08s">
+            <div class="card__img"><img src="https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=900&q=70" alt="Stone soaking tub in a candlelit bathing suite" loading="lazy" width="900" height="700"></div>
+            
+            <div class="card__body">
+              <span class="card__meta">60 / 90 / 120 min · Bath</span>
+              <h3><a class="card__link" href="body-scrub.html">Body Scrub</a></h3>
+              <p>Organic coffee, apricot or sea-salt micro-grains polished in with almond and jojoba oils for velvety skin.</p>
+              <span class="link" aria-hidden="true">Discover <span>&rarr;</span></span>
+            </div>
+          </article>
+          <article class="card reveal" style="--d:0.16s">
+            <div class="card__img"><img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=900&q=70" alt="Essential oil being poured by hand" loading="lazy" width="900" height="700"></div>
+            
+            <div class="card__body">
+              <span class="card__meta">60 / 90 min · Bath</span>
+              <h3><a class="card__link" href="aroma-massage.html">Aroma Massage</a></h3>
+              <p>Bespoke organic essential-oil blends with light warm strokes to calm the nervous system and deepen sleep.</p>
+              <span class="link" aria-hidden="true">Discover <span>&rarr;</span></span>
+            </div>
+          </article>
+          </div>
+        </div>
+
+        <div class="group">
+          <header class="group__head reveal">
+            <p class="eyebrow"><span></span>Premium &amp; Signature</p>
+          </header>
+          <div class="cards cards--2">
+          <article class="card reveal" style="--d:0.00s">
+            <div class="card__img"><img src="https://images.unsplash.com/photo-1560750588-73207b1ef5b8?auto=format&fit=crop&w=900&q=70" alt="Private suite with plunge pool, timber and greenery" loading="lazy" width="900" height="700"></div>
+            <span class="card__badge">Exclusive</span>
+            <div class="card__body">
+              <span class="card__meta">60 / 90 / 120 min · Premium</span>
+              <h3><a class="card__link" href="couple-therapy.html">Couple Therapy</a></h3>
+              <p>Side-by-side rituals in a private dual suite, each tailored, with warm herbal compresses and post-therapy refreshments.</p>
+              <span class="link" aria-hidden="true">Discover <span>&rarr;</span></span>
+            </div>
+          </article>
+          <article class="card reveal" style="--d:0.08s">
+            <div class="card__img"><img src="https://images.unsplash.com/photo-1603006905003-be475563bc59?auto=format&fit=crop&w=900&q=70" alt="Warm candlelight in a dim treatment room" loading="lazy" width="900" height="700"></div>
+            <span class="card__badge">Signature</span>
+            <div class="card__body">
+              <span class="card__meta">60 / 90 / 120 min · Premium</span>
+              <h3><a class="card__link" href="signature-candle-therapy.html">Signature Candle Therapy</a></h3>
+              <p>Warm shea and soy candle wax drizzled over the skin for deep hydration, thermal relief and botanical aroma.</p>
+              <span class="link" aria-hidden="true">Discover <span>&rarr;</span></span>
+            </div>
+          </article>
+          </div>
+        </div>
+<!-- SERVICES:END -->
       </div>
     </section>
 
@@ -215,7 +333,7 @@
           <li class="reveal"><b>01</b><h3>Arrive</h3><p>Slip away from the day with a welcome tea, a warm towel and a quiet moment to set your intention.</p></li>
           <li class="reveal" style="--d:.1s"><b>02</b><h3>Consult</h3><p>Your therapist listens, then tailors pressure, aroma and pace to your body and mood.</p></li>
           <li class="reveal" style="--d:.2s"><b>03</b><h3>Restore</h3><p>Surrender to your chosen treatment in a private suite lit by candle and shadow.</p></li>
-          <li class="reveal" style="--d:.3s"><b>04</b><h3>Linger</h3><p>Rest in our jacuzzi and thermal lounge with herbal infusions as the calm settles into you.</p></li>
+          <li class="reveal" style="--d:.3s"><b>04</b><h3>Linger</h3><p>Rest in our thermal lounge with herbal infusions as the calm settles into you.</p></li>
         </ol>
       </div>
     </section>
@@ -352,11 +470,18 @@
           <div class="form__row">
             <label>Treatment
               <select name="treatment">
-                <option>Dialine Signature Massage</option>
-                <option>Bespoke Radiance Facial</option>
-                <option>Basalt Hot Stone Therapy</option>
-                <option>The Aromatherapy Atelier</option>
-                <option>Jacuzzi Suite Experience</option>
+                <!-- SELECT:BEGIN -->
+            <option>Thai Yoga Massage &middot; 60 / 90 min</option>
+            <option>Balinese Therapy &middot; 60 / 90 min</option>
+            <option>Swedish Therapy &middot; 60 / 90 min</option>
+            <option>Deep Tissue Massage &middot; 60 / 90 min</option>
+            <option>Rope Therapy &middot; 60 / 90 min</option>
+            <option>Hammam Therapy &middot; 90 / 120 min</option>
+            <option>Body Scrub &middot; 60 / 90 / 120 min</option>
+            <option>Aroma Massage &middot; 60 / 90 min</option>
+            <option>Couple Therapy &middot; 60 / 90 / 120 min</option>
+            <option>Signature Candle Therapy &middot; 60 / 90 / 120 min</option>
+<!-- SELECT:END -->
               </select>
             </label>
             <label>Preferred date<input type="date" name="date" id="bookDate"></label>
