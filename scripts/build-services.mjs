@@ -181,12 +181,53 @@ const optionsBlock = services
   .map((s) => `            <option>${esc(s.name)} &middot; ${esc(s.duration)}</option>`)
   .join('\n');
 
+/** Homepage structured data — generated so it can never drift from the catalogue. */
+const ldjsonBlock = (() => {
+  const doc = {
+    '@context': 'https://schema.org',
+    '@type': 'DaySpa',
+    name: site.name,
+    description:
+      'A luxury day spa in Visakhapatnam offering traditional, deep tissue, bath and signature massage rituals.',
+    image:
+      'https://images.unsplash.com/photo-1583416750470-965b2707b355?auto=format&fit=crop&w=1200&q=75',
+    priceRange: '$$$',
+    telephone: '+91-63032-46142',
+    url: site.baseUrl,
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'Horizon Enclave, Nowroji Rd, Daspalla Hills, Maharani Peta',
+      addressLocality: 'Visakhapatnam',
+      addressRegion: 'Andhra Pradesh',
+      postalCode: '530002',
+      addressCountry: 'IN'
+    },
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'Spa Rituals',
+      itemListElement: services.map((s) => ({
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: s.name,
+          url: `${site.baseUrl}/${s.slug}`
+        }
+      }))
+    }
+  };
+
+  const json = JSON.stringify(doc, null, 2).replace(/^/gm, '  ');
+  return `  <script type="application/ld+json">\n${json}\n  </script>`;
+})();
+
 const replaceBetween = (html, begin, end, content, label) => {
   const re = new RegExp(`(${begin})[\\s\\S]*?(${end})`);
   if (!re.test(html)) {
     throw new Error(`Marker pair not found in index.html: ${label}`);
   }
-  return html.replace(re, `$1\n${content}\n$2`);
+  // Function replacer: a plain string would let `$$`, `$&` etc. in generated
+  // content be interpreted as replacement patterns and silently corrupt it.
+  return html.replace(re, (_m, begin, end) => `${begin}\n${content}\n${end}`);
 };
 
 const patchedIndex = (() => {
@@ -194,7 +235,8 @@ const patchedIndex = (() => {
   const selectRe = /(<!-- SELECT:BEGIN -->)[\s\S]*?(<!-- SELECT:END -->)/g;
   const hits = out.match(selectRe)?.length || 0;
   if (hits !== 2) throw new Error(`Expected 2 SELECT marker pairs in index.html, found ${hits}`);
-  out = out.replace(selectRe, `$1\n${optionsBlock}\n$2`);
+  out = out.replace(selectRe, (_m, begin, end) => `${begin}\n${optionsBlock}\n${end}`);
+  out = replaceBetween(out, '<!-- LDJSON:BEGIN -->', '<!-- LDJSON:END -->', ldjsonBlock, 'LDJSON');
   return out;
 })();
 

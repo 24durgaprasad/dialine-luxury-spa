@@ -51,6 +51,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://dialinespa.com/jacuzzi-spa</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://dialinespa.com/signature-candle-therapy</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

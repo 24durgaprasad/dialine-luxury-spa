@@ -446,6 +446,54 @@
       }
     },
     {
+      "slug": "jacuzzi-spa",
+      "name": "Jacuzzi Spa",
+      "group": "Premium & Signature",
+      "shortGroup": "Premium",
+      "eyebrow": "Private Hydrotherapy Ritual",
+      "h1": "Jacuzzi Spa in Visakhapatnam",
+      "lead": "A private thermal suite where warm mineral water, directed jets and low light do the work — easing muscle, settling the mind and preparing the body for deeper rest.",
+      "duration": "60 / 90 min",
+      "cardMeta": "60 / 90 min · Premium",
+      "badge": null,
+      "intro": "Warm mineral water and directed jets in a private suite, easing muscle and quieting the mind.",
+      "image": "https://images.unsplash.com/photo-1620626011761-996317b8d101",
+      "imageAlt": "Marble suite with a freestanding soaking tub",
+      "sectionHeading": "Warm Water, Deep Release",
+      "sectionHeadingEm": "Deep Release",
+      "benefits": [
+        {
+          "icon": "pressure",
+          "title": "Ease Muscular Tension",
+          "text": "Warm water lifts body weight while directed jets work into the lower back, hips and shoulders where tension collects."
+        },
+        {
+          "icon": "flow",
+          "title": "Stimulate Circulation",
+          "text": "Hydrotherapy widens blood vessels and moves oxygen to tired tissue, leaving limbs light and warm."
+        },
+        {
+          "icon": "heart",
+          "title": "Quiet the Nervous System",
+          "text": "Buoyancy, warmth and low light slow the breath and lower the stress response — the deepest kind of rest."
+        }
+      ],
+      "methodology": {
+        "quote": "A private hydrotherapy ritual, using warm mineral water and targeted jets to release muscle, ease joints and restore calm.",
+        "chips": [
+          "Private thermal suite",
+          "Warm mineral water",
+          "Directed jet massage",
+          "Herbal infusion service"
+        ]
+      },
+      "related": ["couple-therapy", "hammam-therapy", "signature-candle-therapy"],
+      "seo": {
+        "title": "Jacuzzi Spa in Visakhapatnam | Dialine Luxury Spa",
+        "description": "A private jacuzzi suite with warm mineral water and directed jets to ease muscle and quiet the mind. Dialine Luxury Spa, Visakhapatnam."
+      }
+    },
+    {
       "slug": "signature-candle-therapy",
       "name": "Signature Candle Therapy",
       "group": "Premium & Signature",
