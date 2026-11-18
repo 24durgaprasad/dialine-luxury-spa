@@ -117,6 +117,66 @@
   const today = new Date(Date.now() - new Date().getTimezoneOffset() * 6e4).toISOString().slice(0, 10);
   ['#quickDate', '#bookDate'].forEach(s => { const el = $(s); if (el) el.min = today; });
 
+  // Premium custom dropdown for the hero bar (native <select> stays in the DOM as the form value)
+  $$('.quick select').forEach(sel => {
+    const wrap = document.createElement('div');
+    wrap.className = 'cselect';
+    sel.parentNode.insertBefore(wrap, sel);
+    wrap.appendChild(sel);
+    sel.classList.add('cselect__native');
+    sel.tabIndex = -1;
+    sel.setAttribute('aria-hidden', 'true');
+
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'cselect__btn';
+    btn.setAttribute('aria-haspopup', 'listbox');
+    btn.setAttribute('aria-expanded', 'false');
+    const list = document.createElement('ul');
+    list.className = 'cselect__list';
+    list.setAttribute('role', 'listbox');
+    list.tabIndex = -1;
+
+    const items = [...sel.options].map((o, i) => {
+      const li = document.createElement('li');
+      li.setAttribute('role', 'option');
+      const [title, ...rest] = o.text.split('·');
+      li.innerHTML = '<b></b>' + (rest.length ? '<small></small>' : '');
+      li.firstChild.textContent = title.trim();
+      if (rest.length) li.lastChild.textContent = rest.join('·').trim();
+      li.addEventListener('click', () => { pick(i); close(); btn.focus(); });
+      list.appendChild(li);
+      return li;
+    });
+    wrap.append(btn, list);
+
+    let active = sel.selectedIndex;
+    const label = () => { const t = sel.options[sel.selectedIndex].text.split('·')[0].trim(); btn.textContent = t; };
+    const mark = i => {
+      active = i;
+      items.forEach((li, n) => { li.classList.toggle('is-active', n === i); li.setAttribute('aria-selected', n === sel.selectedIndex); });
+      items[i].scrollIntoView({ block: 'nearest' });
+    };
+    const pick = i => { sel.selectedIndex = i; sel.dispatchEvent(new Event('input', { bubbles: true })); label(); mark(i); };
+    const open = () => { wrap.classList.add('is-open'); btn.setAttribute('aria-expanded', 'true'); mark(sel.selectedIndex); };
+    const close = () => { wrap.classList.remove('is-open'); btn.setAttribute('aria-expanded', 'false'); };
+    label();
+
+    btn.addEventListener('click', () => wrap.classList.contains('is-open') ? close() : open());
+    btn.addEventListener('keydown', e => {
+      const isOpen = wrap.classList.contains('is-open');
+      if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        if (!isOpen) return open();
+        mark(Math.max(0, Math.min(items.length - 1, active + (e.key === 'ArrowDown' ? 1 : -1))));
+      } else if ((e.key === 'Enter' || e.key === ' ') && isOpen) {
+        e.preventDefault(); pick(active); close();
+      } else if (e.key === 'Escape' && isOpen) { close(); }
+    });
+    document.addEventListener('click', e => { if (!wrap.contains(e.target)) close(); });
+    sel.form && sel.form.addEventListener('reset', () => setTimeout(label));
+  });
+
   // CRM Endpoint for Enquiries
   const CRM_ENQUIRIES_ENDPOINT = 'https://api.crm.vivtejsoftwaresolutions.com/api/internal-leads';
 
