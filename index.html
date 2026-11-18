@@ -204,8 +204,10 @@
 
       <a href="#about" class="hero__scroll" aria-label="Scroll down"><span>Scroll</span><i></i></a>
 
-      <form class="quick" id="quickForm" aria-label="Quick reservation">
-        <label><span>Treatment</span>
+      <form class="quick" id="quickForm" aria-label="Quick reservation" novalidate>
+        <label><span>Name</span><input type="text" name="name" placeholder="Your name" autocomplete="name" required></label>
+        <label><span>Phone</span><input type="tel" name="phone" placeholder="Phone number" autocomplete="tel" required></label>
+        <label><span>Service</span>
           <select name="treatment">
             <!-- SELECT:BEGIN -->
             <option>Thai Yoga Massage &middot; 60 / 90 min</option>
@@ -223,10 +225,8 @@
           </select>
         </label>
         <label><span>Date</span><input type="date" name="date" id="quickDate"></label>
-        <label><span>Guests</span>
-          <select name="guests"><option>1 Guest</option><option>2 Guests</option><option>3–4 Guests</option></select>
-        </label>
-        <button type="submit" class="btn btn--gold">Check availability</button>
+        <button type="submit" class="btn btn--gold">Book now</button>
+        <p class="quick__note" id="quickNote" role="status" aria-live="polite"></p>
       </form>
     </section>
 

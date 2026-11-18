@@ -117,25 +117,13 @@
   const today = new Date(Date.now() - new Date().getTimezoneOffset() * 6e4).toISOString().slice(0, 10);
   ['#quickDate', '#bookDate'].forEach(s => { const el = $(s); if (el) el.min = today; });
 
-  // Quick bar -> prefill booking form and scroll
-  const quickForm = $('#quickForm');
-  if (quickForm) quickForm.addEventListener('submit', e => {
-    e.preventDefault();
-    const q = new FormData(e.target), f = $('#bookForm');
-    if (!f) return;
-    const opt = [...f.treatment.options].find(o => o.text.toLowerCase().includes(q.get('treatment').split(' ')[0].toLowerCase()));
-    if (opt) f.treatment.value = opt.value;
-    if (q.get('date')) f.date.value = q.get('date');
-    $('#book').scrollIntoView({ behavior: reduce ? 'auto' : 'smooth' });
-    setTimeout(() => f.name.focus({ preventScroll: true }), 700);
-  });
-
   // CRM Endpoint for Enquiries
   const CRM_ENQUIRIES_ENDPOINT = 'https://api.crm.vivtejsoftwaresolutions.com/api/internal-leads';
 
-  // Reservation form -> posts enquiry directly to Vivtej CRM
-  const form = $('#bookForm'), note = $('#formNote');
-  if (form && note) {
+  // Reservation forms (hero bar + booking section) -> post enquiry directly to Vivtej CRM
+  const form = $('#bookForm');
+  const wireLeadForm = (form, note) => {
+    if (!form || !note) return;
     form.addEventListener('submit', async e => {
       e.preventDefault();
       const submitBtn = $('#bookSubmitBtn', form) || $('button[type="submit"]', form);
@@ -247,7 +235,9 @@
     });
 
     $$('input, select, textarea', form).forEach(i => i.addEventListener('input', () => i.classList.remove('is-invalid')));
-  }
+  };
+  wireLeadForm(form, $('#formNote'));
+  wireLeadForm($('#quickForm'), $('#quickNote'));
 
   // Deep link from a service page: index.html?ritual=Thai%20Yoga%20Massage#book
   const ritual = new URLSearchParams(location.search).get('ritual');

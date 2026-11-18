@@ -107,11 +107,16 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 @keyframes drip{0%{transform:scaleY(0)}50%{transform:scaleY(1)}100%{transform:scaleY(1);opacity:0}}
 
 /* Quick booking bar */
-.quick{position:absolute;left:50%;bottom:2.2rem;transform:translateX(-50%);width:min(1100px,100% - var(--pad)*2);display:grid;grid-template-columns:1.4fr 1fr 1fr auto;gap:1px;align-items:stretch;padding:.5rem;border:1px solid rgba(244,237,225,.18);border-radius:22px;background:rgba(15,23,20,.55);backdrop-filter:blur(22px) saturate(1.4);box-shadow:0 30px 80px -30px #000}
+.quick{position:absolute;left:50%;bottom:2.2rem;transform:translateX(-50%);width:min(1100px,100% - var(--pad)*2);display:grid;grid-template-columns:1fr 1fr 1.4fr 1fr auto;gap:1px;align-items:stretch;padding:.5rem;border:1px solid rgba(244,237,225,.18);border-radius:22px;background:rgba(15,23,20,.55);backdrop-filter:blur(22px) saturate(1.4);box-shadow:0 30px 80px -30px #000}
 .quick label{display:flex;flex-direction:column;justify-content:center;gap:.15rem;padding:.7rem 1.4rem;border-right:1px solid rgba(244,237,225,.12)}
 .quick label span{font-size:.62rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold)}
 .quick select,.quick input{background:none;border:0;color:var(--cream);font:inherit;font-size:1rem;width:100%;cursor:pointer;color-scheme:dark}
 .quick select option{color:#111}
+.quick input::placeholder{color:rgba(244,237,225,.55)}
+.quick input.is-invalid{color:#e07a68}
+.quick__note{grid-column:1/-1;margin:0;padding:0 1rem;font-size:.85rem;text-align:center;color:var(--gold-2);min-height:0}
+.quick__note:empty{display:none}
+.quick__note:not(:empty){padding:.6rem 1rem .3rem}
 .quick select:focus,.quick input:focus{outline:none}
 .quick .btn{border-radius:16px;margin:.1rem;min-height:52px;min-width:220px;padding:.95rem 1.8rem}
 
@@ -299,7 +304,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
   .burger{display:block;margin-left:auto}
   .hero__side{display:none}
   .quick{grid-template-columns:1fr 1fr}
-  .quick label:nth-child(2){border-right:0}
+  .quick label:nth-child(2),.quick label:nth-child(4){border-right:0}
   .quick .btn{grid-column:span 2}
   .hero__scroll{display:none}
   .hero__content{padding-bottom:17rem}
