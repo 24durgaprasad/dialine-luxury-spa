@@ -181,16 +181,16 @@ ${items.map(cardMarkup).join('\n')}
 
 const servicesBlock = groups.map(groupBlock).join('\n\n');
 
-/** Flat card grid for the /spa-in-vizag landing page (links to each service page). */
+/** Flat card grid for the /spa-in-vizag landing page (display only — the landing page links to no other site pages). */
 const landingCard = (s) => `          <div class="carousel__slide">
-            <a class="tcard" href="${s.slug}.html">
+            <div class="tcard">
               <img src="${unsplash(s.image, 600)}" alt="${attr(s.imageAlt)}" loading="lazy" width="600" height="400">
               <div class="tcard__body">
                 <h3>${esc(s.name)}</h3>
                 <p>${esc(s.intro)}</p>
                 <svg class="ico" aria-hidden="true"><use href="#i-leaf"/></svg>
               </div>
-            </a>
+            </div>
           </div>`;
 const landingServicesBlock = services.map(landingCard).join('\n');
 
