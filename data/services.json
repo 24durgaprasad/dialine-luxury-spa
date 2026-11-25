@@ -27,6 +27,8 @@
       "intro": "Assisted stretching and rhythmic acupressure along the Sen lines to ease chronic pain and restore flexibility.",
       "image": "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b",
       "imageAlt": "Stretching silhouette against a sunset horizon",
+      "landingImage": "https://images.unsplash.com/photo-1600881333168-2ef49b341f30",
+      "landingImageAlt": "Deep yoga stretch on a mat in a quiet studio",
       "sectionHeading": "Restore Energy & Alignment",
       "sectionHeadingEm": "& Alignment",
       "benefits": [
@@ -219,6 +221,8 @@
       "intro": "Suspended rope traction and controlled foot pressure for spinal decompression, posture and muscle symmetry.",
       "image": "https://images.unsplash.com/photo-1600881333168-2ef49b341f30",
       "imageAlt": "Deep stretch into downward dog in a quiet studio",
+      "landingImage": "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b",
+      "landingImageAlt": "Stretching silhouette against a sunset horizon",
       "sectionHeading": "Spinal Traction & Release",
       "sectionHeadingEm": "& Release",
       "benefits": [
@@ -315,6 +319,8 @@
       "intro": "Organic coffee, apricot or sea-salt micro-grains polished in with almond and jojoba oils for velvety skin.",
       "image": "https://images.unsplash.com/photo-1507652313519-d4e9174996dd",
       "imageAlt": "Stone soaking tub in a candlelit bathing suite",
+      "landingImage": "https://images.unsplash.com/photo-1598440947619-2c35fc9aa908",
+      "landingImageAlt": "Jars and tubes of botanical skincare and scrub products",
       "sectionHeading": "Radiant Skin Renewal",
       "sectionHeadingEm": "Skin Renewal",
       "benefits": [
@@ -411,6 +417,8 @@
       "intro": "Side-by-side rituals in a private dual suite, each tailored, with warm herbal compresses and post-therapy refreshments.",
       "image": "https://images.unsplash.com/photo-1560750588-73207b1ef5b8",
       "imageAlt": "Private suite with plunge pool, timber and greenery",
+      "landingImage": "https://images.unsplash.com/photo-1620626011761-996317b8d101",
+      "landingImageAlt": "Marble suite with a freestanding soaking tub for two",
       "sectionHeading": "Synchronized Restoration",
       "sectionHeadingEm": "Restoration",
       "benefits": [
@@ -459,6 +467,8 @@
       "intro": "Warm mineral water and directed jets in a private suite, easing muscle and quieting the mind.",
       "image": "https://images.unsplash.com/photo-1620626011761-996317b8d101",
       "imageAlt": "Marble suite with a freestanding soaking tub",
+      "landingImage": "https://images.unsplash.com/photo-1560750588-73207b1ef5b8",
+      "landingImageAlt": "Private suite with plunge pool, timber and greenery",
       "sectionHeading": "Warm Water, Deep Release",
       "sectionHeadingEm": "Deep Release",
       "benefits": [
