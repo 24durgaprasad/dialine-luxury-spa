@@ -417,8 +417,8 @@
       "intro": "Side-by-side rituals in a private dual suite, each tailored, with warm herbal compresses and post-therapy refreshments.",
       "image": "https://images.unsplash.com/photo-1560750588-73207b1ef5b8",
       "imageAlt": "Private suite with plunge pool, timber and greenery",
-      "landingImage": "https://images.unsplash.com/photo-1620626011761-996317b8d101",
-      "landingImageAlt": "Marble suite with a freestanding soaking tub for two",
+      "landingImage": "/assets/services/couple-therapy.webp",
+      "landingImageAlt": "A couple lying side by side on massage tables while two therapists work on their backs",
       "sectionHeading": "Synchronized Restoration",
       "sectionHeadingEm": "Restoration",
       "benefits": [
@@ -467,8 +467,8 @@
       "intro": "Warm mineral water and directed jets in a private suite, easing muscle and quieting the mind.",
       "image": "https://images.unsplash.com/photo-1620626011761-996317b8d101",
       "imageAlt": "Marble suite with a freestanding soaking tub",
-      "landingImage": "https://images.unsplash.com/photo-1560750588-73207b1ef5b8",
-      "landingImageAlt": "Private suite with plunge pool, timber and greenery",
+      "landingImage": "/assets/services/jacuzzi-spa.webp",
+      "landingImageAlt": "Illuminated private jacuzzi with warm lighting, candles and a fireplace",
       "sectionHeading": "Warm Water, Deep Release",
       "sectionHeadingEm": "Deep Release",
       "benefits": [

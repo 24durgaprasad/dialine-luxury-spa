@@ -181,10 +181,16 @@ ${items.map(cardMarkup).join('\n')}
 
 const servicesBlock = groups.map(groupBlock).join('\n\n');
 
+/** Landing card image: a local /assets path is used as-is, otherwise an Unsplash base URL is sized. */
+const landingSrc = (s) => {
+  const img = s.landingImage || s.image;
+  return img.startsWith('/') ? img : unsplash(img, 600);
+};
+
 /** Flat card grid for the /spa-in-vizag landing page (display only — the landing page links to no other site pages). */
 const landingCard = (s) => `          <div class="carousel__slide">
             <div class="tcard">
-              <img src="${unsplash(s.landingImage || s.image, 600)}" alt="${attr(s.landingImageAlt || s.imageAlt)}" loading="lazy" width="600" height="400">
+              <img src="${landingSrc(s)}" alt="${attr(s.landingImageAlt || s.imageAlt)}" loading="lazy" width="600" height="400">
               <div class="tcard__body">
                 <h3>${esc(s.name)}</h3>
                 <p>${esc(s.intro)}</p>
