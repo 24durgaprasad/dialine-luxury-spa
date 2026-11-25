@@ -21,6 +21,9 @@ const template = await read('scripts/templates/service.html');
 const header = await read('partials/header.html');
 const footer = await read('partials/footer.html');
 const indexHtml = await read('index.html');
+/** Standalone landing pages that reuse the treatment cards + selects (not generated from a template). */
+const landingFile = 'spa-in-vizag.html';
+const landingHtml = await read(landingFile);
 
 const { site, groups, services } = data;
 
@@ -178,6 +181,19 @@ ${items.map(cardMarkup).join('\n')}
 
 const servicesBlock = groups.map(groupBlock).join('\n\n');
 
+/** Flat card grid for the /spa-in-vizag landing page (links to each service page). */
+const landingCard = (s) => `          <div class="carousel__slide">
+            <a class="tcard" href="${s.slug}.html">
+              <img src="${unsplash(s.image, 600)}" alt="${attr(s.imageAlt)}" loading="lazy" width="600" height="400">
+              <div class="tcard__body">
+                <h3>${esc(s.name)}</h3>
+                <p>${esc(s.intro)}</p>
+                <svg class="ico" aria-hidden="true"><use href="#i-leaf"/></svg>
+              </div>
+            </a>
+          </div>`;
+const landingServicesBlock = services.map(landingCard).join('\n');
+
 const optionsBlock = services
   .map((s) => `            <option>${esc(s.name)} &middot; ${esc(s.duration)}</option>`)
   .join('\n');
@@ -232,15 +248,20 @@ const replaceBetween = (html, begin, end, content, label) => {
   return html.replace(re, (_m, begin, end) => `${begin}\n${content}\n${end}`);
 };
 
-const patchedIndex = (() => {
-  let out = replaceBetween(indexHtml, '<!-- SERVICES:BEGIN -->', '<!-- SERVICES:END -->', servicesBlock, 'SERVICES');
-  const selectRe = /(<!-- SELECT:BEGIN -->)[\s\S]*?(<!-- SELECT:END -->)/g;
-  const hits = out.match(selectRe)?.length || 0;
-  if (hits !== 2) throw new Error(`Expected 2 SELECT marker pairs in index.html, found ${hits}`);
-  out = out.replace(selectRe, (_m, begin, end) => `${begin}\n${optionsBlock}\n${end}`);
-  out = replaceBetween(out, '<!-- LDJSON:BEGIN -->', '<!-- LDJSON:END -->', ldjsonBlock, 'LDJSON');
+const patchPage = (html, { ldjson, cards = servicesBlock, selects = true }) => {
+  let out = replaceBetween(html, '<!-- SERVICES:BEGIN -->', '<!-- SERVICES:END -->', cards, 'SERVICES');
+  if (selects) {
+    const selectRe = /(<!-- SELECT:BEGIN -->)[\s\S]*?(<!-- SELECT:END -->)/g;
+    const hits = out.match(selectRe)?.length || 0;
+    if (hits !== 2) throw new Error(`Expected 2 SELECT marker pairs, found ${hits}`);
+    out = out.replace(selectRe, (_m, begin, end) => `${begin}\n${optionsBlock}\n${end}`);
+  }
+  if (ldjson) out = replaceBetween(out, '<!-- LDJSON:BEGIN -->', '<!-- LDJSON:END -->', ldjsonBlock, 'LDJSON');
   return out;
-})();
+};
+
+const patchedIndex = patchPage(indexHtml, { ldjson: true });
+const patchedLanding = patchPage(landingHtml, { ldjson: false, cards: landingServicesBlock, selects: false });
 
 /* --------------------------------------------------------------- run mode */
 
@@ -258,9 +279,13 @@ if (checkOnly) {
     problems.push('index.html is out of date — run: node scripts/build-services.mjs');
   }
 
+  if (patchedLanding !== landingHtml) {
+    problems.push(`${landingFile} is out of date — run: node scripts/build-services.mjs`);
+  }
+
   const onDisk = (await readdir(root)).filter((f) => f.endsWith('.html'));
   for (const f of onDisk) {
-    if (f === 'index.html') continue;
+    if (f === 'index.html' || f === landingFile) continue;
     if (!byslug.has(f.replace(/\.html$/, ''))) problems.push(`orphan page: ${f} has no entry in services.json`);
   }
 
@@ -283,12 +308,22 @@ if (patchedIndex !== indexHtml) {
   console.log('✓ index.html treatments + selects synced');
 }
 
+if (patchedLanding !== landingHtml) {
+  await writeFile(path.join(root, landingFile), patchedLanding, 'utf8');
+  console.log(`✓ ${landingFile} treatments + selects synced`);
+}
+
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>${site.baseUrl}/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>${site.baseUrl}/spa-in-vizag</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
   </url>
 ${services
   .map(
